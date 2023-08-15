@@ -5,57 +5,57 @@ import WorldIcon from '@/components/icons/WorldIcon.vue'
 <template>
   <header>
     <div>
-    <div class="header__topbar">
-      <img alt="Tradeview logo" class="logo" src="@/assets/logo.svg" />
+      <div class="header__topbar">
+        <img alt="Tradeview logo" class="logo" src="@/assets/logo.svg" />
 
-      <ul class="header__ul disable-deco">
-        <li>Forex</li>
-        <li>Stock</li>
-        <li>Futures</li>
-        <li>TradeGATEHub</li>
-      </ul>
+        <ul class="header__ul disable-deco">
+          <li>Forex</li>
+          <li>Stock</li>
+          <li>Futures</li>
+          <li>TradeGATEHub</li>
+        </ul>
 
-      <div class="header__action-items">
-        <p class="filled-arrow-down clickable">Log In</p>
-        <span class="separator" />
-        <p class="clickable">Contact Us</p>
-        <p class="clickable">English <WorldIcon /></p>
+        <div class="header__action-items">
+          <p class="filled-arrow-down clickable">Log In</p>
+          <span class="separator" />
+          <p class="clickable">Contact Us</p>
+          <p class="clickable">English <WorldIcon /></p>
+        </div>
       </div>
-    </div>
 
-    <nav>
-      <ul class="nav__ul disable-deco">
-        <li>
-          <a href="/">Markets</a>
-        </li>
-        <li>
-          <a href="/" class="filled-arrow-down">Company</a>
-        </li>
-        <li>
-          <a href="/">Accounts</a>
-        </li>
-        <li>
-          <a href="/">Platforms</a>
-        </li>
-        <li>
-          <a href="/">Pricing</a>
-        </li>
-        <li>
-          <a href="/">Introducing Brokers</a>
-        </li>
-        <li>
-          <a href="/">Education</a>
-        </li>
-        <li>
-          <a href="/">Support</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+      <nav>
+        <ul class="nav__ul disable-deco">
+          <li>
+            <a href="/">Markets</a>
+          </li>
+          <li>
+            <a href="/" class="filled-arrow-down">Company</a>
+          </li>
+          <li>
+            <a href="/">Accounts</a>
+          </li>
+          <li>
+            <a href="/">Platforms</a>
+          </li>
+          <li>
+            <a href="/">Pricing</a>
+          </li>
+          <li>
+            <a href="/">Introducing Brokers</a>
+          </li>
+          <li>
+            <a href="/">Education</a>
+          </li>
+          <li>
+            <a href="/">Support</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 header {
   line-height: 1.5;
   display: inline;
@@ -63,7 +63,7 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-
+  z-index: 1;
 }
 
 nav {
@@ -98,12 +98,13 @@ nav {
 
   &__ul {
     display: flex;
-    width: 30%;
+    width: 35%;
     margin: 0 1em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     li {
+      letter-spacing: 4px;
       color: var(--vt-c-white-mute);
       font-size: 16px;
       text-transform: uppercase;
@@ -114,7 +115,7 @@ nav {
   &__action-items {
     display: flex;
     justify-content: flex-end;
-    width: 40%;
+    width: 30%;
   }
 }
 
@@ -123,7 +124,7 @@ nav {
   font-size: 16px;
   align-items: center;
   width: 70%;
-  padding: 1em 3em;
+  padding: 2em 3em;
   justify-content: space-between;
 
   li {
