@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import FooterBar from '@/components/FooterBar.vue'
 import CardItem from '@/components/CardItem.vue'
+import DownloadButtons from '@/components/DownloadButtons.vue'
+import ExternalLink from '@/components/icons/ExternalLinkIcon.vue'
 import CommunityIcon from '@/components/icons/CommunityIcon.vue'
 import ItemA from '@/components/icons/ItemA.vue'
 import ItemB from '@/components/icons/ItemB.vue'
@@ -7,7 +10,6 @@ import ItemC from '@/components/icons/ItemC.vue'
 import ItemD from '@/components/icons/ItemD.vue'
 import ItemE from '@/components/icons/ItemE.vue'
 import ItemF from '@/components/icons/ItemF.vue'
-
 const cardItem = [
   {
     title: 'Ideal for Beginner Clients',
@@ -49,6 +51,7 @@ const cardItem = [
 </script>
 
 <template>
+  <NavBar />
   <main>
     <section id="impression">
       <div id="devices">
@@ -61,16 +64,7 @@ const cardItem = [
           our partners provide value-added copy <br />
           trading to their clients.
         </h1>
-        <div class="downloads">
-          <div class="downloads__item">
-            Free Download for Tradeview Users
-            <button class="secondary-button">Contact your Broker</button>
-          </div>
-          <div class="downloads__item">
-            Don’t have a Tradeview Account yet?
-            <button class="primary-button">Get a Free Demo</button>
-          </div>
-        </div>
+        <DownloadButtons />
       </div>
     </section>
     <article id="perks">
@@ -83,6 +77,26 @@ const cardItem = [
         <component v-bind:is="item.icon"></component>
       </CardItem>
     </article>
+
+    <article id="quickguide">
+      <div>
+        <h2>Leading Edge Technology</h2>
+        <p>
+          Easy to use management tools, our fastest <br />
+          possible execution and spreads as low as 0.0.
+        </p>
+        <a>Quick Guide: CommuniTraders Web User Manual <ExternalLink /></a>
+      </div>
+      <img alt="Quick guide photo reference" src="../assets/quick_guide.png" />
+    </article>
+
+    <article id="tryitout">
+
+        <h1>Try CommuniTraders Now!</h1>
+
+      <DownloadButtons />
+    </article>
+    <FooterBar />
   </main>
 </template>
 
@@ -129,6 +143,7 @@ main {
     color: var(--vt-c-white-soft);
   }
 }
+
 #perks {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -138,7 +153,7 @@ main {
   background-color: var(--vt-c-white-soft);
 }
 
-.downloads{
+.downloads {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -162,17 +177,50 @@ main {
   &__item:not(:first-child) {
     border-left: 1px solid gray;
     padding-left: 30px;
-
   }
 
-  &__item:last-child
-  {
+  &__item:last-child {
     border-left: 1px solid gray;
     padding-right: 0;
+  }
+}
 
+#quickguide {
+  display: flex;
+  justify-content: center;
+  gap: 10em;
+  align-items: center;
+  background-color: var(--vt-c-white-mute);
+  color: var(--text-color);
+  padding: 8em 4em;
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
   }
 
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 25px;
+  }
 
+  a {
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
 
+#tryitout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5% 10%;
+  h1 {
+    text-align: center;
+    color: var(--vt-c-white-mute);
+    font-size: 30px;
+    font-weight: bold;
+  }
 }
 </style>

@@ -35,7 +35,6 @@ button {
 	cursor: pointer;
 	outline: inherit;
   padding: 0.5em;
-  font: normal normal medium 20px/27px Noto Sans;
   font-size: 20px;
 }
 

@@ -55,7 +55,7 @@ import WorldIcon from '@/components/icons/WorldIcon.vue'
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 header {
   line-height: 1.5;
   display: inline;

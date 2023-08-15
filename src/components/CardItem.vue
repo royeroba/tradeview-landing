@@ -34,6 +34,5 @@ defineProps(['title', 'description'])
   margin-left: 1rem;
 }
 
-.icon {
-}
+
 </style>
