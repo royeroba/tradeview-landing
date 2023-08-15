@@ -1,35 +1,29 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
 
-  font-weight: normal;
-}
-
-a,
-.green {
+.disable-deco {
+  list-style-type: none;
+  pointer-events: none;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+.simple-arrow-down {
+  &:after &:before{
+    content: "\f0d7";
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.filled-arrow-down:after{
+    content: "▾";
+    margin-left: 3px;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.separator:before {
+  content: "|";
+  margin: 0 10px;
+}
+
+.clickable{
+  cursor: pointer;
 }
