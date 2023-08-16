@@ -137,4 +137,13 @@ b strong {
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  #terms {
+    height:max-content;
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
 </style>

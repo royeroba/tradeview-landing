@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import WorldIcon from '@/components/icons/WorldIcon.vue'
+import HamburgerIcon from './icons/HamburgerIcon.vue'
+import { ref } from 'vue';
+
+const isHamburgerActivated = ref(false);
 </script>
+
 
 <template>
   <header>
@@ -21,10 +26,10 @@ import WorldIcon from '@/components/icons/WorldIcon.vue'
           <p class="clickable">Contact Us</p>
           <p class="clickable">English <WorldIcon /></p>
         </div>
+        <HamburgerIcon id="hamburger" @click="isHamburgerActivated = !isHamburgerActivated" />
       </div>
-
       <nav>
-        <ul class="nav__ul disable-deco">
+        <ul class="nav__ul disable-deco"  v-bind:style="{'display': isHamburgerActivated ? 'flex' : 'none' }">
           <li>
             <a href="/">Markets</a>
           </li>
@@ -77,6 +82,10 @@ nav {
   li a {
     color: var(--vt-c-white-mute);
   }
+}
+
+#hamburger {
+  display: none;
 }
 
 .logo {
@@ -133,6 +142,67 @@ nav {
       list-style-type: none;
       pointer-events: none;
       text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .header {
+    background-color: var(--background-default);
+
+    max-height: 10vh;
+    &__topbar {
+      flex-direction: row;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+    }
+    &__ul {
+      display: none;
+    }
+
+    &__action-items {
+      display: none;
+    }
+  }
+
+  .logo {
+    margin-left: auto;
+  }
+  #hamburger {
+    display: block;
+    width: 20px;
+    margin-left: auto;
+    border: 1px solid var(--vt-c-white-mute);
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    filter: brightness(0) saturate(100%) invert(100%);
+    height: auto;
+    margin-right: 10%;
+  }
+  .nav__ul {
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background-default);
+    li {
+      a {
+        cursor: pointer;
+      }
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      border-bottom: 1px solid gray;
+    }
+    li:first-child {
+      border-top: 1px solid gray;
     }
   }
 }

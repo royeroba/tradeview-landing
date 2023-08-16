@@ -61,12 +61,11 @@ footer {
   }
 }
 
-strong{
-        font-weight: bold;
-    }
+strong {
+  font-weight: bold;
+}
 
 .footer {
-
   &__information {
     display: flex;
     justify-content: space-between;
@@ -96,28 +95,39 @@ strong{
     p {
       font-weight: bold;
     }
-
   }
 
-  &__form{
-
+  &__form {
     display: flex;
     gap: 3em;
-        justify-content: space-between;
-    input{
-        all: unset;
-        border: 1px solid var(--text-color-terms);
-        padding: 1em;
-        justify-content: center;
-        flex:4
-
+    justify-content: space-between;
+    input {
+      all: unset;
+      border: 1px solid var(--text-color-terms);
+      padding: 1em;
+      justify-content: center;
+      flex: 4;
     }
 
     button {
-        flex: 1.5;
-        background-color: var(text-color);
+      flex: 1.5;
+      background-color: var(text-color);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    &__information {
+      flex-direction: column;
     }
   }
 
+  #newsletter {
+    &__form {
+      flex-direction: column;
+    }
+
+  }
 }
 </style>

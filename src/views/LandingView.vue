@@ -91,8 +91,7 @@ const cardItem = [
     </article>
 
     <article id="tryitout">
-
-        <h1>Try CommuniTraders Now!</h1>
+      <h1>Try CommuniTraders Now!</h1>
 
       <DownloadButtons />
     </article>
@@ -100,7 +99,7 @@ const cardItem = [
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 main {
   display: block;
   width: 100%;
@@ -221,6 +220,60 @@ main {
     color: var(--vt-c-white-mute);
     font-size: 30px;
     font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  #devices {
+    width: 100%;
+    height: fit-content;
+    min-height: 90vh;
+    display: block;
+    &_img {
+      display: block;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  #community {
+    margin-top: auto;
+    width: 100%;
+    padding: 0 5%;
+    height: auto;
+    min-height: 90vh;
+  }
+
+  #impression {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+  }
+
+  #perks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #quickguide {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #perks {
+    display: block;
+    padding: 10% 10%;
+
+    gap: 5%;
+    width: 100%;
+    height: max-content;
   }
 }
 </style>
